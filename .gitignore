@@ -1,0 +1,22 @@
+# secrets
+.env
+*.env
+token.txt
+
+# database
+*.db
+*.sqlite
+*.sqlite3
+
+# python
+__pycache__/
+*.pyc
+venv/
+.venv/
+env/
+
+# editor/OS junk
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
