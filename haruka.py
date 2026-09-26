@@ -4,12 +4,13 @@
 # this is a work in progress build so i wouldn't even recommend it to be shared publicly either
 # but uh yeah, important thing to do with her is to alwaysgiver her headpats
 # idk why im writing this, anyways piss off
+# also im new to python so if you guys have any suggestions or critics, email me
 
 # TODO list
 #* - reward system for the headpat streak
 #// - add the /streak command to make it easier to see the streak status
 #// - hide the token
-#* - get this into git/github
+#// - get this into git/github
 #* - make an /about command
 
 #* imports
@@ -100,7 +101,8 @@ TOKEN = os.getenv('DISCORD_TOKEN')
 
 
 
-#? ------  Bot Commands  --------
+#! ------  Bot Commands  --------
+#? ------  Fun/Game Commands  --------
 #* dice command 
 @client.tree.command(name="dice", description="Picks a random number between low and high (1-10 by default)")
 @app_commands.describe(low="Lowest possible number", high="Highest possible number")
@@ -153,6 +155,12 @@ async def streak(interaction: discord.Interaction):
     embed.set_footer(text=footer)
 
     await interaction.response.send_message(embed=embed, file=file)
+
+
+#? ------  Funny Commands  --------
+@client.tree.command(name="secret")
+async def secret(interaction: discord.Interaction):
+    await interaction.response.send_message(f"<@{696181832927936532}> you are my nigga")
 
 
 #* to make the bot run
