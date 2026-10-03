@@ -35,10 +35,10 @@ db.commit()
 
 #* milestones for the streak (wip)
 # MILESTONES = {
-#     3: {"title": "New Friend",  "message": haruka}
-#     7:
-#     14:
-#     30:
+#     3: {"title": "New Friend",  "message": },
+#     7: {"title": "asd", "asdbaod":},
+#     14:{"title": "asd2", "asdbaod2": },
+#     30:{"title": "asd3", "asdbaod3": },
 # }
 
 #* updating the streak
@@ -103,6 +103,21 @@ TOKEN = os.getenv('DISCORD_TOKEN')
 
 #! ------  Bot Commands  --------
 #? ------  Fun/Game Commands  --------
+#* about command
+@client.tree.command(name="about", description="Tells you about me")
+async def about(interaction: discord.Interaction):
+    #* variables
+
+    embed = discord.Embed (
+        title=f"About Me!", 
+        description="Hi I'm Haruka, the cutest and adorable student in Kivotos", 
+        color=0x6934ad
+    )
+    embed.set_thumbnail(url="attachment://headpat.jpg")
+
+
+    await interaction.response.send_message(embed=embed)
+
 #* dice command 
 @client.tree.command(name="dice", description="Picks a random number between low and high (1-10 by default)")
 @app_commands.describe(low="Lowest possible number", high="Highest possible number")
